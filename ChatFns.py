@@ -3,7 +3,7 @@ from socket import *
 import urllib
 import re
 import pygame
-import win32gui
+#import win32gui
 
 def getmixerargs():
     pygame.mixer.init()
@@ -40,23 +40,24 @@ def stopmusic():
     pygame.mixer.music.stop()
 
 #HOW TO PLAY SONG:
-initMixer()
-#playmusic(filename)
+#initMixer()
+#playmusic('ATone.mp3')
 
 
     
-def FlashMyWindow(title):
-    ID = win32gui.FindWindow(None, title)
-    win32gui.FlashWindow(ID,True)
-
-def FlashMyWindow2(title2):
-    ID2 = win32gui.FindWindow(None, title2)
-    win32gui.FlashWindow(ID2,True)    
+#def FlashMyWindow(title):
+#    ID = win32gui.FindWindow(None, title)
+#    win32gui.FlashWindow(ID,True)
+#
+#def FlashMyWindow2(title2):
+#    ID2 = win32gui.FindWindow(None, title2)
+#    win32gui.FlashWindow(ID2,True)    
 
 HOSTlist=[]
-HOSTlist.append('98.206.166.148')
-HOSTlist.append('128.135.35.65')
+#HOSTlist.append('98.206.166.148')
+#HOSTlist.append('128.135.35.65')
 HOSTlist.append('128.135.35.177')
+#HOSTlist.append('128.135.98.185')
 
 def GetExternalIP():
     url = "http://checkip.dyndns.org"
@@ -97,7 +98,7 @@ def LoadMyEntry(ChatLog, EntryText):
             LineNumber = float(ChatLog.index('end'))-1.0
             ChatLog.insert(END, "You: " + EntryText)
             ChatLog.tag_add("You", LineNumber, LineNumber+0.4)
-            ChatLog.tag_config("You", foreground="#b2433e", font=("Inconsolata", 14, "bold"))
+            ChatLog.tag_config("You", foreground="#b2433e", font=("Arial", 14, "bold"))
             ChatLog.config(state=DISABLED)
             ChatLog.yview(END)
 
@@ -112,7 +113,7 @@ def LoadOtherEntry(ChatLog, EntryText):
                 pass
             ChatLog.insert(END, 'YourPartner: ' + EntryText)
             ChatLog.tag_add('YourPartner: ', LineNumber, LineNumber+0.12)
-            ChatLog.tag_config('YourPartner: ', foreground="#3e73b2", font=("Inconsolata", 14, "bold"))
+            ChatLog.tag_config('YourPartner: ', foreground="#3e73b2", font=("Arial", 14, "bold"))
             ChatLog.config(state=DISABLED)
             ChatLog.yview(END)
             
